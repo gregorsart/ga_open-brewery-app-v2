@@ -1,3 +1,47 @@
+# Thoughts before starting the project
+
+10.12.2023 // gregorsart
+
+## General Thoughts
+
+### Tech Stack
+
+- Vercel next.js
+- Vercel swr
+- Tailwind with next.js
+
+### Design
+
+- How does the API Data look like, what do I want to render in which form?
+- mobile first approach
+- Tailwind with configuration of the tailwind config
+- Colors traditional brewing colors (yellow and brown) plus a fresh green
+- Create an illustration maybe as a logo for the page
+
+### Api
+
+- How does the data look like (also important for the Design)
+
+### Spikes
+
+- Pagination (next and previous vs. load more button)
+- Dynamic Roting for Detail Pages
+- Next Skeleton
+
+### Optional things
+
+- Multiple Pages (About Page, List of Breweries + Brewery Detail Page)
+- Hosting on Vercel maybe?
+
+## Next Steps
+
+1. Project Setup (locally)
+2. Create Repo on Github (private)
+3. Connect Github repo with local repo
+4. Create feature branch like "feature/01basic-fetch
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
