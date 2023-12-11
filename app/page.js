@@ -30,6 +30,7 @@ export default async function Home() {
     <>
       <div className="block relative ">
         <Image
+          quality={95}
           height={1920}
           width={602}
           className="rounded-3xl object-cover h-96 mx-auto w-72 md:w-9/12 lg:w-10/12"
