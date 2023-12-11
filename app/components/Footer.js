@@ -4,7 +4,7 @@ import { workFontClass } from "@/lib/fonts.js";
 
 export default function Footer() {
   return (
-    <footer className="fixed bottom-0 left-0 flex h-16 w-full items-center justify-between  bg-mediumGrayBackgroundColor px-20 sm:px-44 md:px-40 lg:px-36 xl:px-52">
+    <footer className="flex h-16 w-full items-center justify-between  bg-mediumGrayBackgroundColor px-20 sm:px-44 md:px-40 lg:px-36 xl:px-52">
       <Link
         className="p-2"
         href="https://gregorsart.com"

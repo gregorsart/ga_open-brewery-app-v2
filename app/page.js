@@ -4,6 +4,7 @@ import Link from "next/link";
 import Subheadline from "./components/Subheadline";
 import Headline from "./components/Headline";
 import DetailsCard from "./components/DetailsCard";
+import Loading from "./components/Loading";
 
 const url = "https://api.openbrewerydb.org/v1/breweries/random";
 
@@ -19,15 +20,18 @@ async function getrandomBrewery() {
 
 export default async function Home() {
   const data = await getrandomBrewery();
+
+  if (!data) return <Loading />;
   const randomBrewery = data[0];
 
   return (
     <>
-      <div className="block relative w-72 md:w-9/12 lg:w-10/12 h-96">
+      <div className="block relative w-72 md:w-9/12 lg:w-10/12">
         <Image
           quality={100}
-          fill
-          className="rounded-3xl object-cover"
+          height={1920}
+          width={602}
+          className="rounded-3xl object-cover h-96"
           src="/open-brewery-app-hero-v05.jpg"
           alt="Heroimage"
         />
@@ -65,7 +69,7 @@ export default async function Home() {
           )}
         </section>
 
-        <section className="mb-7 mt-7">
+        <section className="mt-7">
           <Subheadline>About</Subheadline>
           <p className={"text-m-0 max-w-[30ch]"}>
             Goal is to render the data that I took from{" "}
