@@ -150,6 +150,24 @@ export default function Loading() {
           </div>
         </div>
       </section>
+      <div className="flex flex-col gap-5 animate-pulse">
+        <div className="flex justify-center items-center mb-10 gap-1">
+          <div className="w-full h-0.5 bg-mediumGrayBackgroundColor rounded"></div>
+          <div className="bg-mediumGrayBackgroundColor p-2 rounded-full h-7 w-10"></div>
+          <div className="w-full  h-0.5 bg-mediumGrayBackgroundColor rounded"></div>
+        </div>
+
+        <div className="flex gap-8 justify-between">
+          <div className="flex gap-4">
+            <div className="p-2 rounded-full w-12 h-12 bg-mediumGrayBackgroundColor"></div>
+            <div className="p-2 rounded-full w-12 h-12 bg-mediumGrayBackgroundColor"></div>
+          </div>
+          <div className="flex gap-4">
+            <div className="p-2 rounded-md w-24 bg-mediumGrayBackgroundColor"></div>
+            <div className="p-2 rounded-md w-24 bg-mediumGrayBackgroundColor"></div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
