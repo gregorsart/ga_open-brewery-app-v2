@@ -2,7 +2,7 @@ export default function Loading() {
   // Skeleton for Breweries page
   return (
     <>
-      <div className="mb-2 flex flex-col justify-between bg-softBackgroundColor animate-pulse rounded-lg p-4 h-full w-80"></div>
+      <div className="-mt-12 mb-2 flex flex-col justify-between bg-softBackgroundColor animate-pulse rounded-lg p-4 h-full w-80"></div>
       <section className="grid md:grid-cols-2 lg:grid-cols-3 lg:auto-rows-fr lg:max-w-5xl lg:w-full">
         {/* sepcial text card */}
         <div className="mb-2 flex flex-col justify-center bg-softBackgroundColor animate-pulse rounded-lg p-4 h-full w-80">

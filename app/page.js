@@ -4,7 +4,7 @@ import Link from "next/link";
 import Subheadline from "./components/Subheadline";
 import Headline from "./components/Headline";
 import DetailsCard from "./components/DetailsCard";
-import Loading from "./components/LoadingSpinner";
+import LoadingSpinner from "./components/LoadingSpinner";
 
 const url = "https://api.openbrewerydb.org/v1/breweries/random";
 
@@ -23,7 +23,7 @@ async function getrandomBrewery() {
 export default async function Home() {
   const data = await getrandomBrewery();
 
-  if (!data) return <Loading />;
+  if (!data) return <LoadingSpinner />;
   const randomBrewery = data[0];
 
   return (

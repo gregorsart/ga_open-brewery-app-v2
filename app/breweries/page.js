@@ -1,7 +1,7 @@
 import Headline from "../components/Headline";
 import DetailsCard from "../components/DetailsCard";
 import Pagination from "../components/Pagination";
-import Loading from "../components/LoadingSpinner";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 export default async function Breweries({ searchParams }) {
   async function getBreweries() {
@@ -17,7 +17,7 @@ export default async function Breweries({ searchParams }) {
     return res.json();
   }
   const paginatedBreweries = await getBreweries();
-  if (!paginatedBreweries) return <Loading />;
+  if (!paginatedBreweries) return <LoadingSpinner />;
   return (
     <>
       <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:auto-rows-fr lg:max-w-5xl lg:w-full">
