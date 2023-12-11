@@ -5,3 +5,7 @@
 body {
   color: #242422;
 }
+
+.main-container {
+  min-height: calc(100vh - theme("spacing.28") - theme("spacing.16"));
+}

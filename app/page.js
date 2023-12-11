@@ -4,10 +4,13 @@ import Link from "next/link";
 import Subheadline from "./components/Subheadline";
 import Headline from "./components/Headline";
 import DetailsCard from "./components/DetailsCard";
+import LoadingSpinner from "./components/LoadingSpinner";
 
 const url = "https://api.openbrewerydb.org/v1/breweries/random";
 
 async function getrandomBrewery() {
+  // imitate delay to see the skeleton
+  await new Promise((resolve) => setTimeout(resolve, 3000));
   const res = await fetch(url, {
     next: {
       revalidate: 0, // use 0 to opt out of using cache
@@ -19,15 +22,17 @@ async function getrandomBrewery() {
 
 export default async function Home() {
   const data = await getrandomBrewery();
+
+  if (!data) return <LoadingSpinner />;
   const randomBrewery = data[0];
 
   return (
     <>
-      <div className="block relative w-72 md:w-9/12 lg:w-10/12 h-96">
+      <div className="block relative ">
         <Image
-          quality={100}
-          fill
-          className="rounded-3xl object-cover"
+          height={1920}
+          width={602}
+          className="rounded-3xl object-cover h-96 mx-auto w-72 md:w-9/12 lg:w-10/12"
           src="/open-brewery-app-hero-v05.jpg"
           alt="Heroimage"
         />
@@ -50,7 +55,8 @@ export default async function Home() {
 
       <div className="mb-32 flex flex-col">
         <section>
-          <Headline marginY>Brewery of the moment</Headline>
+          <Headline $marginY>Brewery of the moment</Headline>
+
           <DetailsCard brewery={randomBrewery} />
           {randomBrewery.website_url && (
             <Link
@@ -65,7 +71,7 @@ export default async function Home() {
           )}
         </section>
 
-        <section className="mb-7 mt-7">
+        <section className="mt-7">
           <Subheadline>About</Subheadline>
           <p className={"text-m-0 max-w-[30ch]"}>
             Goal is to render the data that I took from{" "}
