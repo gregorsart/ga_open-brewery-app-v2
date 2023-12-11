@@ -5,6 +5,7 @@ import Subheadline from "./components/Subheadline";
 import Headline from "./components/Headline";
 import DetailsCard from "./components/DetailsCard";
 import LoadingSpinner from "./components/LoadingSpinner";
+import WebsiteLink from "./components/WebsiteLink";
 
 const url = "https://api.openbrewerydb.org/v1/breweries/random";
 
@@ -25,11 +26,13 @@ export default async function Home() {
 
   if (!data) return <LoadingSpinner />;
   const randomBrewery = data[0];
+  const { website_url } = randomBrewery;
 
   return (
     <>
       <div className="block relative ">
         <Image
+          quality={95}
           height={1920}
           width={602}
           className="rounded-3xl object-cover h-96 mx-auto w-72 md:w-9/12 lg:w-10/12"
@@ -58,17 +61,7 @@ export default async function Home() {
           <Headline $marginY>Brewery of the moment</Headline>
 
           <DetailsCard brewery={randomBrewery} />
-          {randomBrewery.website_url && (
-            <Link
-              href={`${randomBrewery.website_url}`}
-              target="_blank"
-              className="text-center text-sm font-normal text-white mt-4 mb-12 hover:bg-primaryColor bg-secondaryColor rounded-lg p-2 inline-block w-full"
-            >
-              {randomBrewery.website_url
-                .replace(/^https?\:\/\//i, "")
-                .replace(/\/$/, "")}
-            </Link>
-          )}
+          <WebsiteLink website_url={website_url} />
         </section>
 
         <section className="mt-7">

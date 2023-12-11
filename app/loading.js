@@ -34,6 +34,16 @@ export default function Loading() {
           </ul>
         </div>
       </div>
+      {/* about text */}
+      <div className="mb-2 flex flex-col justify-center bg-softBackgroundColor animate-pulse rounded-lg p-4 h-full w-80 mt-8 mx-auto">
+        <div className="h-8 bg-mediumGrayBackgroundColor rounded w-1/2 mx-auto mb-3"></div>
+        <div className="h-3 bg-mediumGrayBackgroundColor rounded w-full mb-3"></div>
+        <div className="h-3 bg-mediumGrayBackgroundColor rounded w-4/5 mb-3"></div>
+
+        <div className="h-3 bg-mediumGrayBackgroundColor rounded w-full mb-3 mt-5"></div>
+        <div className="h-3 bg-mediumGrayBackgroundColor rounded w-5/6 mb-3"></div>
+        <div className="h-3 bg-mediumGrayBackgroundColor rounded w-4/5 mb-3"></div>
+      </div>
     </div>
   );
 }

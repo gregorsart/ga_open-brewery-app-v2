@@ -19,7 +19,7 @@ export default function DetailsCard({ brewery }) {
             <p
               className={"text-m-0 max-w-[30ch] text-white font-light text-sm"}
             >
-              Browery type
+              Brewery type
             </p>
             <p
               className={"text-m-0 max-w-[30ch] text-white font-light text-sm"}
