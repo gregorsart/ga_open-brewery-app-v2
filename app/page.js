@@ -4,11 +4,13 @@ import Link from "next/link";
 import Subheadline from "./components/Subheadline";
 import Headline from "./components/Headline";
 import DetailsCard from "./components/DetailsCard";
-import Loading from "./components/Loading";
+import Loading from "./components/LoadingSpinner";
 
 const url = "https://api.openbrewerydb.org/v1/breweries/random";
 
 async function getrandomBrewery() {
+  // imitate delay to see the skeleton
+  await new Promise((resolve) => setTimeout(resolve, 3000));
   const res = await fetch(url, {
     next: {
       revalidate: 0, // use 0 to opt out of using cache
@@ -28,7 +30,6 @@ export default async function Home() {
     <>
       <div className="block relative ">
         <Image
-          quality={100}
           height={1920}
           width={602}
           className="rounded-3xl object-cover h-96 mx-auto w-72 md:w-9/12 lg:w-10/12"
@@ -55,6 +56,7 @@ export default async function Home() {
       <div className="mb-32 flex flex-col">
         <section>
           <Headline $marginY>Brewery of the moment</Headline>
+
           <DetailsCard brewery={randomBrewery} />
           {randomBrewery.website_url && (
             <Link

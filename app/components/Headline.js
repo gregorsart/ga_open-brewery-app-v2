@@ -5,8 +5,8 @@ export default function Headline({ children, $marginY }) {
     <h1
       className={
         $marginY
-          ? `my-12 ${bitterFontClass} mx-auto my-auto font-serif text-3xl text-mediumBrownBackgroundColor font-black max-w-[15ch] text-center`
-          : `my-auto ${bitterFontClass} mx-auto my-auto font-serif text-3xl text-mediumBrownBackgroundColor font-black max-w-[15ch] text-center`
+          ? `my-12 ${bitterFontClass} mx-auto font-serif text-3xl text-mediumBrownBackgroundColor font-black max-w-[15ch] text-center`
+          : `my-auto ${bitterFontClass} mx-auto font-serif text-3xl text-mediumBrownBackgroundColor font-black max-w-[15ch] text-center`
       }
     >
       {children}

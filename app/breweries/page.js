@@ -1,9 +1,12 @@
 import Headline from "../components/Headline";
 import DetailsCard from "../components/DetailsCard";
 import Pagination from "../components/Pagination";
+import Loading from "../components/LoadingSpinner";
 
 export default async function Breweries({ searchParams }) {
   async function getBreweries() {
+    // imitate delay to see the skeleton
+    await new Promise((resolve) => setTimeout(resolve, 3000));
     const url = `https://api.openbrewerydb.org/v1/breweries?page=${searchParams.page}&per_page=${searchParams.per_page}`;
     const res = await fetch(url, {
       next: {
@@ -14,6 +17,7 @@ export default async function Breweries({ searchParams }) {
     return res.json();
   }
   const paginatedBreweries = await getBreweries();
+  if (!paginatedBreweries) return <Loading />;
   return (
     <>
       <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:auto-rows-fr lg:max-w-5xl lg:w-full">
@@ -22,6 +26,7 @@ export default async function Breweries({ searchParams }) {
           return <DetailsCard key={brewery.id} brewery={brewery} />;
         })}
       </section>
+
       <Pagination />
     </>
   );

@@ -3,7 +3,7 @@ import { workFontClass } from "@/lib/fonts.js";
 
 export default function Loading() {
   return (
-    <div className="flex flex-col justify-center items-center h-screen">
+    <div className="main-container flex flex-col justify-center items-center">
       <Image
         className="h-20 animate-bounce
         w-auto"
