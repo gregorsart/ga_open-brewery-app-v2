@@ -1,5 +1,6 @@
 import Subheadline from "@/app/components/Subheadline";
 import WebsiteLink from "@/app/components/WebsiteLink";
+import LoadingSpinner from "@/app/components/LoadingSpinner";
 
 export default async function Brewery({ params }) {
   async function getBrewery() {
