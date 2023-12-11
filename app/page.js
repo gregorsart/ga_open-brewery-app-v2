@@ -26,12 +26,12 @@ export default async function Home() {
 
   return (
     <>
-      <div className="block relative w-72 md:w-9/12 lg:w-10/12">
+      <div className="block relative ">
         <Image
           quality={100}
           height={1920}
           width={602}
-          className="rounded-3xl object-cover h-96"
+          className="rounded-3xl object-cover h-96 mx-auto w-72 md:w-9/12 lg:w-10/12"
           src="/open-brewery-app-hero-v05.jpg"
           alt="Heroimage"
         />
@@ -54,7 +54,7 @@ export default async function Home() {
 
       <div className="mb-32 flex flex-col">
         <section>
-          <Headline marginY>Brewery of the moment</Headline>
+          <Headline $marginY>Brewery of the moment</Headline>
           <DetailsCard brewery={randomBrewery} />
           {randomBrewery.website_url && (
             <Link
