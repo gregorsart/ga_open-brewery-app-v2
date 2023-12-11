@@ -4,7 +4,7 @@ import WebsiteLink from "@/app/components/WebsiteLink";
 export default async function Brewery({ params }) {
   async function getBrewery() {
     // imitate delay to see the skeleton
-    // await new Promise((resolve) => setTimeout(resolve, 3000));
+    await new Promise((resolve) => setTimeout(resolve, 3000));
     const url = `https://api.openbrewerydb.org/v1/breweries/${params.id}`;
     const res = await fetch(url, {
       next: {
