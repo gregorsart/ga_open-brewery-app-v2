@@ -3,7 +3,7 @@ export default function Loading() {
   return (
     <div className="block animate-pulse w-full mx-auto">
       {/* card */}
-      <div className="mb-2 flex flex-col justify-between bg-softBackgroundColor animate-pulse rounded-lg p-4 h-full w-80 mx-auto">
+      <div className="mb-2 flex flex-col justify-between bg-softBackgroundColor animate-pulse rounded-lg p-4 h-full responsive-width mx-auto">
         <div className="mt-5 bg-mediumGrayBackgroundColor p-4 rounded-md">
           <div className="h-6 bg-softBackgroundColor rounded w-1/3 mx-auto mb-3"></div>
           <ul className="divide-y divide-softBackgroundColor mt-8">

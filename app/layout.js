@@ -15,9 +15,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-
         <main
-          className={`${workFontClass} main-container font-sans flex flex-col items-center bg-softBackgroundColor gap-6 py-12 px-6 mt-28`}
+          className={`${workFontClass} main-container font-sans flex flex-col items-center bg-softBackgroundColor gap-6 py-12 mt-28 px-4`}
         >
           {children}
         </main>
