@@ -55,7 +55,7 @@ export default async function Home() {
       <section className="mt-7 responsive-width">
         <Subheadline>About</Subheadline>
         <p className={"text-m-0 mx-auto text-center"}>
-          Goal is to render the data that I took from
+          Goal is to render the data that I took from{" "}
           <Link
             href="https://www.openbrewerydb.org/"
             className=" hover:underline hover:underline-offset-8 hover:decoration-2 hover:decoration-primaryColor font-medium"
