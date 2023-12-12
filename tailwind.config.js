@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      spacing: {
+        100: "25rem",
+      },
       colors: {
         transparent: "transparent",
         current: "currentColor",

@@ -20,7 +20,7 @@ export default async function Breweries({ searchParams }) {
   if (!paginatedBreweries) return <LoadingSpinner />;
   return (
     <>
-      <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:auto-rows-fr lg:max-w-5xl lg:w-full">
+      <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         <Headline>List of all Breweries</Headline>
         {paginatedBreweries.map((brewery) => {
           return <DetailsCard key={brewery.id} brewery={brewery} />;

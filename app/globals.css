@@ -9,3 +9,7 @@ body {
 .main-container {
   min-height: calc(100vh - theme("spacing.28") - theme("spacing.16"));
 }
+
+.responsive-width {
+  width: min(90vw, theme("spacing.80"));
+}

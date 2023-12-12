@@ -31,14 +31,14 @@ export default async function Brewery({ params }) {
     website_url,
   } = singleBrewery;
   return (
-    <section className="relative block w-72">
+    <section className="relative block responsive-width">
       {/* Decorative cicles */}
       <div className="absolute w-2 h-2 rounded-full inline-block bg-secondaryColor left-2 top-2"></div>
       <div className="absolute w-2 h-2 rounded-full inline-block bg-secondaryColor right-2 top-2"></div>
       <div className="absolute w-2 h-2 rounded-full inline-block bg-secondaryColor left-2 bottom-2"></div>
       <div className="absolute w-2 h-2 rounded-full inline-block bg-secondaryColor right-2 bottom-2"></div>
 
-      <div className="flex flex-col justify-between bg-mediumBrownBackgroundColor  rounded-lg p-4">
+      <div className="flex flex-col justify-between bg-mediumBrownBackgroundColor rounded-lg p-4">
         <Subheadline>{name}</Subheadline>
         {/* Basic information */}
         <ul className="divide-y divide-secondaryColor mb-12">

@@ -4,7 +4,10 @@ import Subheadline from "./Subheadline";
 export default function DetailsCard({ brewery }) {
   const { name, brewery_type, city, country, id } = brewery;
   return (
-    <Link href={`/breweries/${id}`} className="group relative block md:h-56">
+    <Link
+      href={`/breweries/${id}`}
+      className="group relative block mx-auto md:h-56 responsive-width"
+    >
       {/* Decorative cicles */}
       <div className="absolute w-2 h-2 rounded-full inline-block bg-secondaryColor group-hover:bg-mediumBrownBackgroundColor left-2 top-2"></div>
       <div className="absolute w-2 h-2 rounded-full inline-block bg-secondaryColor group-hover:bg-mediumBrownBackgroundColor right-2 top-2"></div>

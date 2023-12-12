@@ -35,7 +35,7 @@ export default async function Home() {
           quality={95}
           height={1920}
           width={602}
-          className="rounded-3xl object-cover h-96 mx-auto w-72 md:w-9/12 lg:w-10/12"
+          className="rounded-3xl object-cover h-96 mx-auto responsive-width md:w-9/12 lg:w-10/12"
           src="/open-brewery-app-hero-v05.jpg"
           alt="Heroimage"
         />
@@ -56,31 +56,29 @@ export default async function Home() {
         </div>
       </div>
 
-      <div className="mb-32 flex flex-col">
-        <section>
-          <Headline $marginY>Brewery of the moment</Headline>
+      <section>
+        <Headline $marginY>Brewery of the moment</Headline>
 
-          <DetailsCard brewery={randomBrewery} />
-          <WebsiteLink website_url={website_url} />
-        </section>
+        <DetailsCard brewery={randomBrewery} />
+        <WebsiteLink website_url={website_url} />
+      </section>
 
-        <section className="mt-7">
-          <Subheadline>About</Subheadline>
-          <p className={"text-m-0 max-w-[30ch]"}>
-            Goal is to render the data that I took from{" "}
-            <Link
-              href="https://www.openbrewerydb.org/"
-              className=" hover:underline hover:underline-offset-8 hover:decoration-2 hover:decoration-primaryColor font-medium"
-            >
-              openbrewerydb.org
-            </Link>
-          </p>
-          <p className={"text-m-0 max-w-[30ch] mt-4"}>
-            This second version of the app uses ssr and instead of the Next.js
-            Page Router, it uses the App Router
-          </p>
-        </section>
-      </div>
+      <section className="mt-7 responsive-width">
+        <Subheadline>About</Subheadline>
+        <p className={"text-m-0 mx-auto text-center"}>
+          Goal is to render the data that I took from
+          <Link
+            href="https://www.openbrewerydb.org/"
+            className=" hover:underline hover:underline-offset-8 hover:decoration-2 hover:decoration-primaryColor font-medium"
+          >
+            openbrewerydb.org
+          </Link>
+        </p>
+        <p className={"text-m-0 max-w-[30ch] mt-4 mx-auto text-center"}>
+          This second version of the app uses ssr and instead of the Next.js
+          Page Router, it uses the App Router.
+        </p>
+      </section>
     </>
   );
 }
