@@ -20,7 +20,7 @@ export default function Footer() {
         />
       </Link>
       <p className={`${workFontClass} font-sans text-sm`}>
-        V2 — Copryright gregorsart 2023
+        V2 — gregorsart 2023
       </p>
     </footer>
   );

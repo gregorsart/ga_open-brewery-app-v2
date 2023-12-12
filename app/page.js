@@ -1,28 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-
 import Subheadline from "./components/Subheadline";
 import Headline from "./components/Headline";
 import DetailsCard from "./components/DetailsCard";
 import LoadingSpinner from "./components/LoadingSpinner";
 import WebsiteLink from "./components/WebsiteLink";
+import { getBreweryData } from "@/lib/api";
 
 const url = "https://api.openbrewerydb.org/v1/breweries/random";
 
-async function getrandomBrewery() {
-  // imitate delay to see the skeleton
-  await new Promise((resolve) => setTimeout(resolve, 3000));
-  const res = await fetch(url, {
-    next: {
-      revalidate: 0, // use 0 to opt out of using cache
-    },
-  });
-
-  return res.json();
-}
-
 export default async function Home() {
-  const data = await getrandomBrewery();
+  // Get brewery data
+  const data = await getBreweryData(url);
 
   if (!data) return <LoadingSpinner />;
   const randomBrewery = data[0];

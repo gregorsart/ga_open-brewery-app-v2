@@ -1,21 +1,12 @@
 import Subheadline from "@/app/components/Subheadline";
 import WebsiteLink from "@/app/components/WebsiteLink";
 import LoadingSpinner from "@/app/components/LoadingSpinner";
+import { getBreweryData } from "@/lib/api";
 
 export default async function Brewery({ params }) {
-  async function getBrewery() {
-    // imitate delay to see the skeleton
-    await new Promise((resolve) => setTimeout(resolve, 3000));
-    const url = `https://api.openbrewerydb.org/v1/breweries/${params.id}`;
-    const res = await fetch(url, {
-      next: {
-        revalidate: 0, // use 0 to opt out of using cache
-      },
-    });
-
-    return res.json();
-  }
-  const singleBrewery = await getBrewery();
+  // Get brewery data
+  const url = `https://api.openbrewerydb.org/v1/breweries/${params.id}`;
+  const singleBrewery = await getBreweryData(url);
   if (!singleBrewery) return <LoadingSpinner />;
   const {
     name,
