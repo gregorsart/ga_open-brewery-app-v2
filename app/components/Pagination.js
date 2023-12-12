@@ -4,23 +4,22 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
-export default function Pagination() {
-  const [limit, setLimit] = useState(9);
-  const [page, setPage] = useState(1);
+export default function Pagination({
+  smallPagination,
+  mediumPagination,
+  firstPage,
+  breweriesMetadata,
+}) {
+  const [limit, setLimit] = useState(smallPagination);
+  const [page, setPage] = useState(firstPage);
   const router = useRouter();
 
   useEffect(() => {
     router.push(`/breweries?page=${page}&per_page=${limit}`, { scroll: false });
-  }, [limit]);
-
-  // Setting up the pagination
-  // const paginatedBreweries = breweries.slice((page - 1) * limit, page * limit);
-  // To disable the previous button if necessary
-  // let hasNextPage = breweries.length >= (page + 1) * limit;
+  }, [limit, page]);
 
   // pagination settings
-  const smallPagination = 9;
-  const mediumPagination = 15;
+
   // Check if the end of the list is reached
   // if (paginatedBreweries.length === 0) setPage(1);
   // if (paginatedBreweries.length < limit) hasNextPage = false;
@@ -47,8 +46,8 @@ export default function Pagination() {
       {/* Current page with decoration */}
       <div className="flex justify-center items-center mb-10 gap-1">
         <div className="w-full bg-gradient-to-l from-mediumBrownBackgroundColor to-softBackgroundColor h-0.5"></div>
-        <p className="bg-primaryColor font-bold flex justify-center items-center p-2 rounded-full w-6 h-6 text-almostBlackColor outline outline-offset-4 outline-2 outline-mediumBrownBackgroundColor">
-          {page - 1}
+        <p className="bg-primaryColor font-bold flex justify-center items-center p-2 rounded-md w-full h-6 text-almostBlackColor outline outline-offset-4 outline-2 outline-mediumBrownBackgroundColor">
+          {page} / {Math.round(breweriesMetadata / limit)} pages
         </p>
         <div className="w-full  h-0.5 bg-gradient-to-r from-mediumBrownBackgroundColor to-softBackgroundColor"></div>
       </div>
